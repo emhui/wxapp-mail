@@ -1,0 +1,45 @@
+<view class='main'>
+	<view class='goods-box'>
+		<image class="goods-box-image" src="{{item.img}}"></image>
+
+		<view class="goods-box-op" >
+
+			<view class="goods-box-min" bindtap="min">-</view>
+
+			<view class="goods-box-num">数量 {{num}}</view>
+
+			<view class="goods-box-add" bindtap="add">+</view>
+
+			<view class="goods-box-car-active" bindtap="addToCart">
+				<view class="goods-box-car ">加入购物车</view>
+
+				<image class="goods-box-car-icon-small" src="/image/car_white.png"></image>
+			</view>
+
+
+			<view class="car-wrapper" bindtap="goToCartPage">
+				<image class="goods-box-car-icon-mid" src="/image/car_selected.png"></image>
+				<view class="car-icon-num" wx:if="{{carNum}}">
+					{{carNum}}
+				</view>
+			</view>
+
+		</view>
+
+		<view class="goods-box-has">有货</view>
+
+		<view class="goods-box-name">{{item.name}}</view>
+
+		<view class="goods-box-price">¥{{item.price}}</view>
+	</view>
+	<view class='goods-tab'>
+
+		<mp-tabs tabs="{{tabs}}" swiperClass="weui-tabs-swiper" activeClass="tab-bar-title__selected" tab-underline-color="#99CC66">
+			<block wx:for="{{tabs}}" wx:key="title">
+				<view class="tab-content" slot="tab-content-{{index}}"> {{item.title}} </view>
+			</block>
+		</mp-tabs>
+	</view>
+
+
+</view>

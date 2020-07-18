@@ -1,0 +1,117 @@
+/* pages/detail/detail.wxss */
+.main{
+  position: relative;
+}
+
+.goods-box{
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6f5;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
+}
+
+.goods-box-image{
+  width: 375rpx;
+  height: 375rpx;
+}
+
+.goods-box-op{
+  color: white;
+  width: 90%;
+  background-color: #99CC66;
+  border-radius: 20rpx;
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  justify-content: space-around;
+}
+.goods-box-car-active{
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.goods-box-car-icon-small{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.goods-box-has{
+  
+}
+
+.goods-box-name{
+  font-size: 60rpx;
+}
+
+.goods-box-price{
+  
+}
+
+.goods-box-tab{
+  
+}
+
+
+.weui-tabs-bar__wrp {
+    border-bottom: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.weui-tabs-swiper {
+    width: 100%;
+    height: 100px;
+}
+
+.tab-content {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40rpx;
+}
+
+.weui-tabs-bar__content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-bar-title__selected {
+    font-weight: bold;
+}
+
+.car-wrapper{
+  position: absolute;
+  top: 15rpx;
+  right: 20rpx;
+}
+
+.goods-box-car-icon-mid{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.car-icon-num{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #99CC66;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 25rpx;
+}
+
+.goods-box-car-active:active +.car-wrapper{ 
+  transform: scale(1.15);
+}
+
+

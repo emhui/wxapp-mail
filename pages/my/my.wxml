@@ -1,0 +1,29 @@
+<!--pages/my/my.wxml-->
+<view class="main">
+  <view class="header">
+    <image src="{{thumb}}" class="thumb"></image>
+    <view class="nickname">{{nickname}}</view>
+    <view class="about"></view>
+  </view>
+ 
+  	<view class="info-wrapper">
+		<view class="info" wx:if="{{info}}">
+			<view class="info-main">
+				<view class="info-name">姓名: {{info.name}}</view>
+				<view class="info-tel">电话: {{info.tel}}</view>
+			</view>
+			<view class="info-address">
+				地址: {{info.address}}
+			</view>
+		</view>
+    <view class="info-empty" wx:else>
+      填写地址
+    </view>
+		<navigator url="../info/info">
+			<mp-icon class="info-goto-icon" icon="arrow" color="#adadad" size="{{18}}"></mp-icon>
+		</navigator>
+	</view>
+
+  <view class="order-wrapper">我的订单</view>
+   <view class="order-wrapper">关于我们</view>
+</view>

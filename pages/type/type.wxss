@@ -1,0 +1,41 @@
+
+@import '../common.wxss';
+
+page{
+  background-color: #FFFFFF;
+  height: 100%;
+}
+
+.vtabs-content-item {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.item-wrapper{
+  min-height: 100rpx;
+  display: flex;
+  border-bottom: 4rpx solid #eee;
+}
+
+.item-img{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.item-main{
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.item-main-name{
+  font-size: 38rpx;
+}
+
+.item-main-text{
+
+}

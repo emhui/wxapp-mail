@@ -1,0 +1,22 @@
+<mp-vtabs 
+  vtabs="{{vtabs}}" 
+  activeTab="{{activeTab}}" 
+  bindtabclick="onTabCLick"
+  bindchange="onChange"
+  class="test"
+>
+  <block wx:for="{{vtabs}}" wx:key="title" >
+    <mp-vtabs-content tabIndex="{{index}}">
+      <view class="vtabs-content-item">
+        <view class="item-wrapper" wx:for-item="item2" wx:for-index="index2" wx:for="{{items}}" wx:if="{{ item.title === item2.type}}" wx:key="*this">
+        <image class="item-img" src="{{item2.img}}" bindtap="detail" data-item='{{item2}}'></image>
+        <view class="item-main">
+          <view class="item-main-name">{{item2.name}}</view>
+          <view class="item-main-text">{{item2.weight}}</view>
+          <view class="item-main-text">¥ {{item2.price}}</view>
+        </view>
+        </view>
+      </view>
+    </mp-vtabs-content>
+  </block>
+</mp-vtabs>

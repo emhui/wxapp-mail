@@ -1,0 +1,50 @@
+<view class='main'>
+
+	<view class="page__bd">
+		<mp-searchbar bindselectresult="selectResult" search="{{search}}" ext-class="my-search"></mp-searchbar>
+	</view>
+
+	<swiper indicator-dots="true" autoplay="true">
+		<block wx:for="{{banners}}" wx:key="*this">
+			<swiper-item>
+				<image src="{{item.img}}" class="slide-image"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+
+
+
+	<view class="select-wrapper">
+		<view class="select-title">精选主题</view>
+
+		<view class="select-top">
+			<image class="select-top-image" src="/image/s1.png">
+			</image>
+			<image class="select-top-image" src="/image/s2.png">
+			</image>
+		</view>
+
+
+		<view class="select-bottom">
+			<image class="select-bottom-image" src="/image/s3.png"></image>
+		</view>
+
+	</view>
+
+	<view class="new-wrapper">
+		<view class="new-title select-title">最近新品</view>
+
+		<view class="new-list">
+			<view class="new-item" wx:for="{{new_list}}" bindtap="detail" data-item='{{item}}' wx:key="*this">
+				<image class="new-image" src="{{item.img}}"></image>
+				<view class="new-title-wrapper">
+					<view class="new-title">{{item.name}}</view>
+					｜
+					<view class="new-weight">{{item.weight}}</view>
+				</view>
+				<view class="new-price">¥{{item.price}}</view>
+			</view>
+		</view>
+	</view>
+
+</view>

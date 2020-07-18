@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/type/type",
+    "pages/cart/cart",
+    "pages/logs/logs",
+    "pages/detail/detail",
+    "pages/order/order",
+    "pages/info/info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#99CC66",
+    "navigationBarTitleText": "水果小铺",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home_selected.png"
+      },
+      {
+        "pagePath": "pages/type/type",
+        "text": "分类",
+        "iconPath": "image/class.png",
+        "selectedIconPath": "image/class_selected.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "image/car.png",
+        "selectedIconPath": "image/car_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/my_selected.png"
+      }
+    ]
+  }
+}

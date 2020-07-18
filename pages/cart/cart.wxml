@@ -1,0 +1,40 @@
+<view class="main" wx:if="{{cart.length}}">
+
+	<view class="goods-list-wrapper" wx:for="{{cart}}" wx:key="id">
+		<view class="goods-selected" bindtap="select" data-item="{{item}}" data-index="{{index}}">
+			<icon wx:if="{{item.selected}}" type="success" color="red" class="goods-selected-icon"></icon>
+			<icon wx:else type="circle" color="#99cc66" class="goods-selected-icon"></icon>
+		</view>
+
+		<image src="{{item.item.img}}" class="goods-item-image" bindtap="navToDetail" data-item="{{item}}"></image>
+
+		<view class="goods-item-main">
+			<view class="goods-item-main-top">
+				<view class="goods-item-main-top-name">{{item.item.name}} {{item.item.weight}}</view>
+				<view class="goods-item-main-top-price">¥ {{item.item.price}}</view>
+			</view>
+			<view class="goods-item-main-bottom">
+				<view class="goods-item-main-bottom-sub" bindtap="sub" data-item="{{item}}" data-index="{{index}}">-</view>
+				<view class="goods-item-main-bottom-num">{{item.num}}</view>
+				<view class="goods-item-main-bottom-add" bindtap="add" data-item="{{item}}" data-index="{{index}}">+</view>
+				<view class="goods-item-main-bottom-delete" bindtap="delete" data-item="{{item}}" data-index="{{index}}">x</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="account-wrapper">
+		<view class="goods-selected goods-selected-bottom" bindtap="selectAll">
+			<icon wx:if="{{selectedAll}}" type="success" color="white" class="goods-selected-icon goods-all-selected-icon"></icon>
+			<icon wx:else type="circle" color="white" class="goods-selected-icon goods-all-selected-icon"></icon>
+		</view>
+		<view class="account-all-select-text">全选</view>
+		<view class="fill-gap"></view>
+		<view class="account-all-num">¥ {{sumPrice}}</view>
+		<navigator url="../order/order?sum={{sumPrice}}">
+			<mp-icon class="account-all-icon" icon="arrow" color="white" size="{{18}}"></mp-icon>
+		</navigator>
+	</view>
+
+</view>
+
+<view wx:else class="empty">您的购物车还没有东西</view>
