@@ -8,6 +8,29 @@ Page({
   onLoad() {
     this.loadData()
   },
+  loadDataFromServer: function() {
+    var _ = this
+    wx.request({
+      url: app.globalData.api_type,
+      method: 'GET',
+      success(res) {
+        console.log(res);
+        _.setData({
+          vtabs: res.data.map( e => ({title: e.name, id: e.id}))
+        })
+      }
+    })
+    wx.request({
+      url: app.globalData.api_goods,
+      method: 'GET',
+      success(res) {
+        console.log(res);
+        _.setData({
+          items: res.data
+        })
+      }
+    })
+  },
   loadData: function() {
     let items = app.globalData.new_list
     const vtabs = Array.from(new Set(items.map(e => e.type))).map( e => ({title: e}))
@@ -30,6 +53,8 @@ Page({
   onChange(e) {
     const index = e.detail.index
     console.log('change', index)
+  },
+  onShow: function() {
+    this.loadDataFromServer()
   }
-
 })

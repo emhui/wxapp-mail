@@ -20,6 +20,23 @@ Page({
       new_list: app.globalData.new_list,
       search: this.search.bind(this)
     })
+    this.getDataFromServer()
+  },
+  getDataFromServer: function () {
+    let _this = this
+    wx.request({
+      url: app.globalData.api_goods,
+      method: 'GET',
+      success(res) {
+        console.log(res);
+        _this.setData({
+          new_list: res.data
+        })
+        wx.stopPullDownRefresh({
+          success: (res) => {},
+        })
+      }
+    })
   },
   detail: function (e) {
     var item = e.currentTarget.dataset.item
@@ -34,10 +51,10 @@ Page({
   },
   search: function (value) {
     console.log(value);
-    
-    let result =  app.globalData.new_list.filter(e => e.name.includes(value))
+
+    let result = app.globalData.new_list.filter(e => e.name.includes(value))
     console.log(result);
-    
+
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(result
@@ -47,7 +64,8 @@ Page({
         }, {
           text: '搜索结果2',
           value: 2
-        }] */)
+        }] */
+        )
       }, 200)
     })
   },
@@ -57,5 +75,8 @@ Page({
     wx.navigateTo({
       url: '/pages/detail/detail',
     })
+  },
+  onPullDownRefresh: function() {
+    this.getDataFromServer()
   }
 })

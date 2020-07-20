@@ -134,7 +134,9 @@ App({
         weight: '100g',
         type: '生鲜果蔬'
       }
-    ]
+    ],
+    api_goods: 'http://jp-tyo-dvm.sakurafrp.com:25152/goods/api/good/',
+    api_type: 'http://jp-tyo-dvm.sakurafrp.com:25152/goods/api/type/'
   },
   saveItem: function (item) {
     wx.setStorageSync('item', item)

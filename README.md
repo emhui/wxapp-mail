@@ -3,7 +3,11 @@
 #### 介绍
 
 此项目参考 [https://github.com/lin-xin/wxapp-mall/tree/uni](https://github.com/lin-xin/wxapp-mall/tree/uni)
-使用微信小程序模范了一个购物APP。目前有下面几个功能
+使用微信小程序模范了一个购物APP。
+
+通过调用后台接口实现获取新品数据。分类数据。后台使用Django编写
+
+目前有下面几个功能
 
 - 新品列表
 - 商品详情
@@ -12,6 +16,10 @@
 - 购物车
 - 个人信息
 - ...
+
+后期计划
+
+- [x] 预计使用Django编写后台API，然后使用微信小程序调用API获取菜单数据
 
 #### 小程序展示
 
